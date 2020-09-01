@@ -1,15 +1,13 @@
 package com.techproed;
 
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class Day04_LocatorLinkText {
+public class Day04_LocatorsTagName {
 
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver", "/Users/fatihefendioglu/Documents/selenium libraries/drivers/chromedriver");
@@ -19,23 +17,18 @@ public class Day04_LocatorLinkText {
         driver.manage().window().maximize();
         driver.get("http://a.testaddressbook.com/");
 
-        WebElement signInLinki = driver.findElement(By.linkText("Sign in"));
-        signInLinki.click();
+        // id , name, className, linkText, partialLinkText, tagName
 
-        WebElement homeLinki = driver.findElement(By.partialLinkText("H"));
-        homeLinki.click();
-
-
-
-
-    }
-
-
-
-
+        WebElement homeLinki = driver.findElement(By.tagName("a")); // Home
+        String homeYazisi = homeLinki.getText(); // String
+        System.out.println(homeYazisi);
 
 
 
 
     }
 
+
+
+
+}
